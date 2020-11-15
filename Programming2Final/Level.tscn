@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Pixel Adventure 1/Free/Terrain/Terrain (16x16).png" type="Texture" id=2]
+[ext_resource path="res://Camera.gd" type="Script" id=3]
+[ext_resource path="res://Game Over.tscn" type="PackedScene" id=4]
+[ext_resource path="res://TerrainGeneration.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 614.371, 45.4605 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 47, 47, 0, 47, 0, 0.233002, 47, 0.233002 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "Terrain (16x16).png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 96, 0, 48, 47 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Terrain (16x16).png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 47, 47 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+
+[node name="FloorKiller" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorKiller"]
+position = Vector2( 519.112, 596.118 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 514.318, 301.606 )
+scale = Vector2( 4.3879, -29.3213 )
+current = true
+script = ExtResource( 3 )
+
+[node name="Node2D2" type="Node2D" parent="Camera2D"]
+position = Vector2( 117.108, 0.2565 )
+rotation = 1.39626
+scale = Vector2( 0.227899, -0.0341049 )
+
+[node name="CameraKiller" type="Area2D" parent="Camera2D"]
+position = Vector2( -0.255814, 0.0382805 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CameraKiller"]
+position = Vector2( -109.27, 0.319635 )
+shape = SubResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 4 )
+format = 1
+
+[node name="FloorPanel" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FloorPanel"]
+position = Vector2( 519.112, 595.118 )
+shape = SubResource( 1 )
+
+[node name="Game Over" parent="." instance=ExtResource( 4 )]
+visible = true

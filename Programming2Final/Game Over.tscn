@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="Game Over" type="Node2D"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1030.0
+margin_bottom = 583.0
+color = Color( 0, 0, 0, 0.423529 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 179.0
+margin_top = 70.0
+margin_right = 265.0
+margin_bottom = 103.0
+rect_scale = Vector2( 8.36, 5.16 )
+text = "Game Over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
