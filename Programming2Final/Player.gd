@@ -42,3 +42,5 @@ func _on_Area2D_area_entered(area):
 	if area.get_name() == "FloorKiller":
 		print("Fell into the void")
 		Global.gameover = true
+	if area.get_name() == "Final Platform":
+		Global.winner = true

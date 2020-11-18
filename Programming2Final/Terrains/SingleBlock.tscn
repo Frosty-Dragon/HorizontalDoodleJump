@@ -46,7 +46,7 @@ points = PoolVector2Array( 47, 47, 0, 47, 0, 0.233002, 47, 0.233002 )
 1/z_index = 0
 
 [node name="SingleBlock" type="StaticBody2D"]
-position = Vector2( -1.1225, 2.24487 )
+constant_linear_velocity = Vector2( 1, 0 )
 __meta__ = {
 "_edit_group_": true
 }
