@@ -8,21 +8,68 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "AnimateObject",
+"language": "GDScript",
+"path": "res://Scripts/AnimateObject.gd"
+}, {
+"base": "AnimateObject",
+"class": "ControlableObject",
+"language": "GDScript",
+"path": "res://Scripts/ControlableObject.gd"
+}, {
+"base": "AnimateObject",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Scripts/Enemy.gd"
+}, {
+"base": "ControlableObject",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scripts/Player.gd"
+}, {
+"base": "Control",
+"class": "menu",
+"language": "GDScript",
+"path": "res://Scripts/Menu.gd"
+} ]
 _global_script_class_icons={
-
+"AnimateObject": "",
+"ControlableObject": "",
+"Enemy": "",
+"Player": "",
+"menu": ""
 }
 
 [application]
 
 config/name="Programming2Final"
-run/main_scene="res://Level1.tscn"
+run/main_scene="res://Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Global.gd"
-TerrainGeneration="*res://TerrainGeneration.gd"
+Global="*res://Scripts/Global.gd"
+TerrainGeneration="res://Scripts/TerrainGeneration.gd"
+
+[input]
+
+A={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+D={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+W={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 

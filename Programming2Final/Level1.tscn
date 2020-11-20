@@ -1,55 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Pixel Adventure 1/Free/Terrain/Terrain (16x16).png" type="Texture" id=2]
-[ext_resource path="res://Camera.gd" type="Script" id=3]
-[ext_resource path="res://TerrainGeneration.gd" type="Script" id=5]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4.10608, 10 )
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 47, 47, 0, 47, 0, 0.233002, 47, 0.233002 )
-
-[sub_resource type="TileSet" id=4]
-0/name = "Terrain (16x16).png 0"
-0/texture = ExtResource( 2 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 96, 0, 48, 47 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-1/name = "Terrain (16x16).png 1"
-1/texture = ExtResource( 2 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 47, 47 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 3 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-1/z_index = 0
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 10, 9.17818 )
+[ext_resource path="res://TileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/TerrainGeneration.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 146.28, 23.9124 )
@@ -60,55 +14,9 @@ script = ExtResource( 5 )
 [node name="Node2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( -352.102, -76.4137 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 514.318, 301.606 )
-scale = Vector2( 4.3879, -29.3213 )
-current = true
-script = ExtResource( 3 )
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
 
-[node name="Node2D2" type="Node2D" parent="Camera2D"]
-position = Vector2( 116.861, 0.851074 )
-rotation = 1.39626
-scale = Vector2( 0.227899, -0.0341049 )
-
-[node name="CameraKiller" type="Area2D" parent="Camera2D"]
-position = Vector2( -0.255814, 0.0382805 )
-z_index = 1
-
-[node name="Camera" type="CollisionShape2D" parent="Camera2D/CameraKiller"]
-position = Vector2( -109.27, 0.319635 )
-shape = SubResource( 2 )
-
-[node name="TileMap" type="TileMap" parent="Camera2D/CameraKiller"]
-position = Vector2( -116.957, 10.248 )
-scale = Vector2( 0.227899, -0.0341049 )
-tile_set = SubResource( 4 )
-cell_size = Vector2( 48, 48 )
-format = 1
-
-[node name="Floor" type="CollisionShape2D" parent="Camera2D/CameraKiller"]
-position = Vector2( 0.886574, -14.1888 )
-scale = Vector2( -688.82, 0.250582 )
-shape = SubResource( 5 )
-
-[node name="ColorRect" type="ColorRect" parent="Camera2D"]
-margin_left = -144.788
-margin_top = -12.3649
-margin_right = -104.788
-margin_bottom = 27.6351
-color = Color( 0.721569, 0.117647, 0.117647, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TileMap2" type="TileMap" parent="."]
-position = Vector2( -0.00012207, -0.00112915 )
-scale = Vector2( 0.999998, 1 )
-z_as_relative = false
-tile_set = SubResource( 4 )
-cell_size = Vector2( 48, 48 )
-format = 1
-tile_data = PoolIntArray( 196686, 1, 0, 196687, 1, 0, 196688, 1, 0, 196689, 1, 0, 196690, 1, 0, 196691, 1, 0, 262175, 1, 0, 262176, 1, 0, 262177, 1, 0, 262178, 1, 0, 262179, 1, 0, 262180, 1, 0, 262189, 1, 0, 262190, 1, 0, 262191, 1, 0, 262192, 1, 0, 262193, 1, 0, 262194, 1, 0, 262195, 1, 0, 262221, 1, 0, 262222, 1, 0, 327707, 1, 0, 327708, 1, 0, 327736, 1, 0, 327737, 1, 0, 327738, 1, 0, 327739, 1, 0, 327740, 1, 0, 327741, 1, 0, 327742, 1, 0, 327755, 1, 0, 393237, 1, 0, 393238, 1, 0, 393239, 1, 0, 393240, 1, 0, 393241, 1, 0, 393242, 1, 0, 393243, 1, 0, 393286, 1, 0, 393287, 1, 0, 393288, 1, 0, 393289, 1, 0, 393290, 1, 0, 393291, 1, 0, 458790, 1, 0, 458791, 1, 0, 458792, 1, 0, 458793, 1, 0, 458794, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 1, 0, 524309, 1, 0, 524310, 1, 0, 524335, 1, 0, 524336, 1, 0, 524337, 1, 0, 524338, 1, 0, 524339, 1, 0, 524340, 1, 0, 524353, 1, 0, 524354, 1, 0, 524355, 1, 0, 524373, 0, 0, 524374, 0, 0, 524375, 0, 0, 524376, 0, 0, 524377, 0, 0, 524378, 0, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589858, 1, 0, 589859, 1, 0, 589860, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655386, 1, 0, 655387, 1, 0, 655388, 1, 0, 655389, 1, 0, 655390, 1, 0, 655391, 1, 0, 655414, 1, 0, 655415, 1, 0, 655416, 1, 0, 655417, 1, 0, 655418, 1, 0, 655419, 1, 0, 655420, 1, 0, 655421, 1, 0, 655422, 1, 0, 655429, 1, 0, 655430, 1, 0, 655431, 1, 0, 655432, 1, 0, 655433, 1, 0, 655434, 1, 0, 720973, 1, 0, 720974, 1, 0, 720975, 1, 0, 720976, 1, 0, 720977, 1, 0, 720978, 1, 0, 786514, 1, 0, 786515, 1, 0 )
+[node name="TileMap2" parent="." instance=ExtResource( 2 )]
 
 [node name="Final Platform" type="Area2D" parent="."]
 

@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Play.png" type="Texture" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Button" type="Button" parent="PlayButton"]
+margin_left = 300.0
+margin_top = 199.0
+margin_right = 312.0
+margin_bottom = 219.0
+rect_scale = Vector2( 36.2388, 10.988 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="PlayButton"]
+position = Vector2( 532.444, 287.724 )
+scale = Vector2( 18.9645, 18.9645 )
+texture = ExtResource( 2 )
+hframes = 2
+
+[node name="Label" type="Label" parent="PlayButton"]
+margin_left = 386.022
+margin_top = 263.842
+margin_right = 426.022
+margin_bottom = 277.842
+rect_scale = Vector2( 6.39864, 6.39394 )
+text = "Play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="WASD" type="CheckButton" parent="Control"]
+margin_left = 837.554
+margin_top = 5.99323
+margin_right = 913.554
+margin_bottom = 45.9932
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 927.078
+margin_top = 15.7322
+margin_right = 967.078
+margin_bottom = 29.7322
+rect_scale = Vector2( 1.43724, 1.43555 )
+text = "WASD"
+
+[node name="HardMode" type="CheckButton" parent="Control"]
+margin_left = 840.367
+margin_top = 54.1766
+margin_right = 916.367
+margin_bottom = 94.1766
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control"]
+margin_left = 918.658
+margin_top = 63.6674
+margin_right = 1032.66
+margin_bottom = 86.6674
+rect_scale = Vector2( 1.32019, 1.50076 )
+text = "Hard Mode"
+[connection signal="toggled" from="Control/WASD" to="." method="_on_WASD_toggled"]
+[connection signal="toggled" from="Control/HardMode" to="." method="_on_HardMode_toggled"]

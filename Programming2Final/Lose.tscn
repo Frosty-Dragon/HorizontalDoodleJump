@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 190.248
+margin_top = 165.05
+margin_right = 247.248
+margin_bottom = 179.05
+rect_scale = Vector2( 12.2047, 12.2047 )
+text = "You Lose"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 492.629
+margin_top = 347.738
+margin_right = 534.629
+margin_bottom = 361.738
+text = "Sucker"
