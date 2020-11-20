@@ -1,7 +1,7 @@
 class_name Player extends ControlableObject
 
 
-
+#Here we check if the player has touched something that would make it loose or win 
 func _on_Area2D_area_entered(area):
 	print(area.get_name())
 	print(area)

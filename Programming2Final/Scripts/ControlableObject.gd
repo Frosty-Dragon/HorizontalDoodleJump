@@ -1,5 +1,5 @@
 class_name ControlableObject extends AnimateObject
-
+#here we take user input and translate that to movement
 var WALK_FORCE = 420
 var WALK_MAX_SPEED = 500
 var STOP_FORCE = 700
@@ -7,7 +7,7 @@ var JUMP_SPEED = 800
 var walk = null
 var velocity = Vector2()
 
-#onready var gravity = 1500 #ProjectSettings.get_setting("physics/2d/default_gravity")
+#here we check if harmode is on
 func _ready():
 	print(Global.WASD)
 	if Global.HardMode == true:

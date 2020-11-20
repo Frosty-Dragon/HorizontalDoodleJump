@@ -1,4 +1,5 @@
 extends Node
+#This script was meant to run "Procedreal Generation" but was scraped for a multitude of resons
 var Node2d = Node2D.new()
 #var root_node = get_tree().get_edited_scene_root()
 var Singleblock = load("res://Terrains/SingleBlock.tscn")

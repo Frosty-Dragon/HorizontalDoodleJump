@@ -1,7 +1,9 @@
 extends Camera2D
+#Here we speed up the camera over time
 var addspud = 1
 var speed = 1
 var addtoaddspud = 0.01
+#Here we check hard mode is on
 func _ready():
 	if Global.HardMode == true:
 		addtoaddspud = 0.07
